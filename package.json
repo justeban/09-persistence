@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/justeban/09-persistence#readme",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "eslint": "^4.19.1",
     "jest": "^23.0.0",
     "uuid": "^3.2.1"
