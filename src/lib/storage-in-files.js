@@ -14,20 +14,14 @@ storage.fetchAll = () => {
     fs.readdir(directory, (err, files) => {
       if (err) { reject(err); }
       else { 
+        let promises = [];
         files.forEach( (el) => {
-
           let id = el.replace(/\.json/, '');
-
-          fs.readFile(`${directory}/${id}.json`, (err, data) => {
-            if (err) { reject(err); }
-            else {
-              database[id] = JSON.parse(data.toString());
-              
-            }
-          });
-        })
-        
-        
+          promises.push(storage.fetchOne(id));
+        });
+        Promise.all(promises)
+          .then(contents => resolve(contents))
+          .catch(err => reject(err));
       }
     });
   });
