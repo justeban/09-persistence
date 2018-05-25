@@ -3,7 +3,7 @@
 const http = require('http');
 
 const router = require('./lib/router.js');
-const api = require('./lib/api.js');
+const api = require('./lib/api.js'); // eslint-disable-line
 
 let isRunning = false;
 
@@ -21,5 +21,5 @@ module.exports = {
   },
   stop: () => {
     console.log('Stop Not Implemented');
-  }
-}
+  },
+};
