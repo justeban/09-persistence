@@ -4,4 +4,4 @@ const memoryStorage = require('./storage-in-memory.js');
 
 const fileStorage = require('./storage-in-files.js');
 
-module.exports = memoryStorage;
+module.exports = fileStorage;
